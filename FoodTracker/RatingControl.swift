@@ -2,7 +2,14 @@ import UIKit
 @IBDesignable class RatingControl: UIStackView {
     
     private var ratingButtons = [UIButton]()
-    var rating = 0
+    var rating = 0 {
+        didSet {
+            for index in 0..<rating {
+                ratingButtons[index].isSelected = true
+            
+            }
+        }
+    }
     @IBInspectable var starSize: CGSize =  CGSize(width: 44.0, height: 40.0) {
         didSet {
             createButton()
