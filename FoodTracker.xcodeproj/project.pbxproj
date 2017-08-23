@@ -13,6 +13,9 @@
 		842E8E841F4B21C6000C6922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842E8E831F4B21C6000C6922 /* Assets.xcassets */; };
 		842E8E871F4B21C6000C6922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842E8E851F4B21C6000C6922 /* LaunchScreen.storyboard */; };
 		8455E1731F4BBB9800DA6A47 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455E1721F4BBB9800DA6A47 /* RatingControl.swift */; };
+		846E3B1B1F4DD8FD00FF0342 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E3B1A1F4DD8FD00FF0342 /* Meal.swift */; };
+		846E3B1D1F4DD90700FF0342 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E3B1C1F4DD90700FF0342 /* MealTableViewController.swift */; };
+		846E3B1F1F4DD90D00FF0342 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E3B1E1F4DD90D00FF0342 /* MealTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

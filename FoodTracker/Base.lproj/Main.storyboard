@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0uF-ab-uMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Woa-68-wR5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,21 +27,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="xIx-B5-myv">
-                                            <rect key="frame" x="8" y="12" width="77" height="77"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-HG-XUg" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                             <rect key="frame" x="113" y="33" width="230" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4v-ZT-2JD">
-                                            <rect key="frame" x="192" y="4" width="42" height="21"/>
+                                            <rect key="frame" x="153" y="4" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="xIx-B5-myv">
+                                            <rect key="frame" x="21" y="4" width="77" height="77"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -66,7 +66,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRZ-vs-sQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1649" y="-263"/>
+            <point key="canvasLocation" x="-1770.4000000000001" y="-244.22788605697153"/>
         </scene>
         <!--Meal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -83,20 +83,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yMn-ew-mgv">
                                 <rect key="frame" x="16" y="84" width="343" height="430"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-wo-6W9">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-lx-77F">
-                                        <rect key="frame" x="0.0" y="10" width="343" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-lx-77F">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="OHm-LP-Fg1">
-                                        <rect key="frame" x="8.5" y="50" width="326" height="326"/>
+                                        <rect key="frame" x="3.5" y="40" width="336" height="336"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OHm-LP-Fg1" secondAttribute="height" multiplier="1:1" id="3Jk-wO-Fiu"/>
@@ -115,8 +109,6 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bhi-wo-6W9" firstAttribute="leading" secondItem="yMn-ew-mgv" secondAttribute="leading" id="MEz-CI-qgb"/>
-                                    <constraint firstAttribute="trailing" secondItem="bhi-wo-6W9" secondAttribute="trailing" id="Ytn-N7-S7v"/>
                                     <constraint firstAttribute="trailing" secondItem="3zS-lx-77F" secondAttribute="trailing" id="opw-hV-dqt"/>
                                     <constraint firstItem="3zS-lx-77F" firstAttribute="leading" secondItem="yMn-ew-mgv" secondAttribute="leading" id="xJM-kf-xls"/>
                                 </constraints>
@@ -134,14 +126,14 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zxY-hL-Vcq"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="E5U-ND-YKO">
                             <connections>
-                                <segue destination="fTh-Hz-TZo" kind="unwind" unwindAction="passMealWith_segue:" id="hak-ce-3gm"/>
+                                <segue destination="fTh-Hz-TZo" kind="unwind" unwindAction="passMealWithSegue:" id="Hxp-26-nmK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mealImageview" destination="OHm-LP-Fg1" id="dfK-Sl-VOt"/>
-                        <outlet property="mealNameLabel" destination="bhi-wo-6W9" id="gsD-QO-HsE"/>
                         <outlet property="mealNameTextField" destination="3zS-lx-77F" id="7BH-MY-chM"/>
+                        <outlet property="rating" destination="YO1-Ng-pA5" id="1ub-4z-Go7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -152,7 +144,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="210" y="-275"/>
+            <point key="canvasLocation" x="-348" y="-244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xn0-x3-Mfa">
@@ -170,7 +162,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzD-UY-Ptx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-508" y="-263"/>
+            <point key="canvasLocation" x="-1151" y="-233"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dp6-s6-0eo">
@@ -188,7 +180,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="As9-wA-U31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2375.1999999999998" y="-219.04047976011995"/>
+            <point key="canvasLocation" x="-2471" y="-233"/>
         </scene>
     </scenes>
     <resources>

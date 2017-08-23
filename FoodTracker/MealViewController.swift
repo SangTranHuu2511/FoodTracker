@@ -11,20 +11,37 @@ import UIKit
 class MealViewController: UIViewController{
     
     
-    @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var mealImageview: UIImageView!
+    @IBOutlet weak var rating: RatingControl!
+    
+    var meal: Meal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusSave()
         mealNameTextField.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.meal = Meal(name: mealNameTextField.text!, image: mealImageview.image, rating: rating.rating)
+        
+    }
+    
+    func statusSave() {
+        let status = mealNameTextField.text ?? ""
+        navigationItem.rightBarButtonItem?.isEnabled = !status.isEmpty
+        
+        
     }
 }
 
 extension MealViewController: UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        mealNameLabel.text = mealNameTextField.text
         textField.resignFirstResponder()
+        navigationItem.title = mealNameTextField.text
+        statusSave()
         
         return true
         
