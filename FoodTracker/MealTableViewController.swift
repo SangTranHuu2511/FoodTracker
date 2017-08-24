@@ -61,13 +61,34 @@ class MealTableViewController: UITableViewController {
     
     @IBAction func passMeal(segue: UIStoryboardSegue) {
         if let mealViewController = segue.source as? MealViewController {
-            listMeals.append(mealViewController.meal!)
-            
-            let indexPath = IndexPath(row: listMeals.count - 1, section: 0)
-            tableView.insertRows(at: [indexPath], with: .automatic)
+
+            if let indexPathMealSelected = tableView.indexPathForSelectedRow {
+                listMeals[indexPathMealSelected.row] = mealViewController.meal!
+                tableView.reloadData()
+                
+            } else {
+                listMeals.append(mealViewController.meal!)
+                let indexPath = IndexPath(row: listMeals.count - 1, section: 0)
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
             
         }
 
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifierSegue = segue.identifier
+        if identifierSegue == "MealDetail" {
+            if let mealViewController = segue.destination as? MealViewController {
+                let indexPathMealSelected = tableView.indexPathForSelectedRow
+                mealViewController.meal = listMeals[(indexPathMealSelected?.row)!]
+                
+            }
+        }
     }
 
 }

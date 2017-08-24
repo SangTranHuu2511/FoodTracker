@@ -48,6 +48,7 @@
                                     <outlet property="mealImageView" destination="xIx-B5-myv" id="Hrh-m9-c8m"/>
                                     <outlet property="mealName" destination="O4v-ZT-2JD" id="ias-ln-AEm"/>
                                     <outlet property="mealRating" destination="SNe-HG-XUg" id="oyn-2O-z3B"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="MealDetail" id="X8v-EN-gAq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,14 +60,14 @@
                     <navigationItem key="navigationItem" id="RLQ-cG-uUG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B3h-e8-sou">
                             <connections>
-                                <segue destination="0uF-ab-uMB" kind="show" id="jld-v2-diT"/>
+                                <segue destination="0uF-ab-uMB" kind="show" identifier="AddMeal" id="jld-v2-diT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRZ-vs-sQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770.4000000000001" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="-1770" y="-305"/>
         </scene>
         <!--Meal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -83,7 +84,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yMn-ew-mgv">
                                 <rect key="frame" x="16" y="84" width="343" height="430"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-lx-77F">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-lx-77F">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -123,7 +124,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OYh-sc-EdV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zxY-hL-Vcq"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zxY-hL-Vcq">
+                            <connections>
+                                <action selector="cancle" destination="BYZ-38-t0r" id="VLk-N2-hrS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="E5U-ND-YKO">
                             <connections>
                                 <segue destination="fTh-Hz-TZo" kind="unwind" unwindAction="passMealWithSegue:" id="Hxp-26-nmK"/>
@@ -144,7 +149,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-348" y="-244"/>
+            <point key="canvasLocation" x="-282" y="-339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xn0-x3-Mfa">
@@ -162,7 +167,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzD-UY-Ptx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1151" y="-233"/>
+            <point key="canvasLocation" x="-1052" y="-801"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dp6-s6-0eo">
@@ -180,10 +185,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="As9-wA-U31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2471" y="-233"/>
+            <point key="canvasLocation" x="-2582" y="-338"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultImage" width="720" height="1280"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="X8v-EN-gAq"/>
+    </inferredMetricsTieBreakers>
 </document>

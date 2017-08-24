@@ -4,10 +4,8 @@ import UIKit
     private var ratingButtons = [UIButton]()
     var rating = 0 {
         didSet {
-            for index in 0..<rating {
-                ratingButtons[index].isSelected = true
-            
-            }
+            clearButtonSelect()
+            updateButtonSelect()
         }
     }
     @IBInspectable var starSize: CGSize =  CGSize(width: 44.0, height: 40.0) {
@@ -30,6 +28,19 @@ import UIKit
     required init(coder: NSCoder) {
         super.init(coder: coder)
         createButton()
+    }
+    
+    func clearButtonSelect() {
+        
+        for index in 0..<ratingButtons.count {
+            ratingButtons[index].isSelected = false
+        }
+    }
+    
+    func updateButtonSelect() {
+        for index in 0..<rating {
+            ratingButtons[index].isSelected = true
+        }
     }
     
     func ratingButtonTapped(button: UIButton) {

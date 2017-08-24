@@ -34,6 +34,14 @@ class MealViewController: UIViewController{
         
         
     }
+    @IBAction func canncel (_sender: UIButton) {
+        if presentingViewController is UINavigationController {
+            dismiss(animated: true, completion: nil)
+        } else if let navigationController = navigationController {
+            navigationController.popViewController(animated: true)
+            
+        }
+    }
 }
 
 extension MealViewController: UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
