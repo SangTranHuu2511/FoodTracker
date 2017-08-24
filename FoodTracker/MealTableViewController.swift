@@ -28,6 +28,7 @@ class MealTableViewController: UITableViewController {
         let meal2 = Meal(name: "Food", image: imageMeal2, rating: 2)
         let meal3 = Meal(name: "Rice", image: imageMeal3, rating: 2)
         listMeals += [meal1, meal2, meal3]
+        navigationItem.leftBarButtonItem = editButtonItem
 
     }
 

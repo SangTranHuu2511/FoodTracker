@@ -19,6 +19,11 @@ class MealViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let meal = meal {
+            mealImageview.image = meal.image
+            mealNameTextField.text = meal.name
+            rating.rating = meal.rating
+        }
         statusSave()
         mealNameTextField.delegate = self
     }
