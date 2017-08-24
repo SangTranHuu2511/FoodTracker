@@ -126,7 +126,7 @@
                     <navigationItem key="navigationItem" id="OYh-sc-EdV">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zxY-hL-Vcq">
                             <connections>
-                                <action selector="cancle" destination="BYZ-38-t0r" id="VLk-N2-hrS"/>
+                                <action selector="canncelWith_sender:" destination="BYZ-38-t0r" id="IiX-pO-hmp"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="E5U-ND-YKO">
