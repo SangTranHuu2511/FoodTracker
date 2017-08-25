@@ -27,9 +27,21 @@ class MealTableViewController: UITableViewController {
         let meal1 = Meal(name: "Pizza", image: imageMeal1, rating: 2)
         let meal2 = Meal(name: "Food", image: imageMeal2, rating: 2)
         let meal3 = Meal(name: "Rice", image: imageMeal3, rating: 2)
-        listMeals += [meal1, meal2, meal3]
+        if let loadMeal = loadMeals() {
+            listMeals += loadMeal
+        } else {
+            listMeals += [meal1, meal2, meal3]
+        }
         navigationItem.leftBarButtonItem = editButtonItem
 
+    }
+    
+    private func saveMeal() {
+        NSKeyedArchiver.archiveRootObject(listMeals, toFile: Meal.ArchiveURL.path)
+        
+    }
+    private func loadMeals() -> [Meal]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
     }
 
 
@@ -66,6 +78,7 @@ class MealTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             listMeals.remove(at: indexPath.row)
+            saveMeal()
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
         }
@@ -84,6 +97,8 @@ class MealTableViewController: UITableViewController {
                 let indexPath = IndexPath(row: listMeals.count - 1, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic)
             }
+            
+            saveMeal()
             
         }
 
